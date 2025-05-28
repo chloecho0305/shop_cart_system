@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.5 on win32)" generated="2025-05-28T22:42:51.119120" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Sample" source="C:\Users\janet\python_project\shop_cart_system\shopping_cart\tests\robot\test_sample.robot">
+<kw name="Create Session" owner="RequestsLibrary" type="SETUP">
+<msg time="2025-05-28T22:42:51.472567" level="INFO">Creating Session using : alias=shopping_cart, url=http://127.0.0.1:8000/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>shopping_cart</arg>
+<arg>http://127.0.0.1:8000/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-05-28T22:42:51.472567" elapsed="0.001000"/>
+</kw>
+<test id="s1-t1" name="Homepage Should Return 200" line="6">
+<kw name="Get Request" owner="RequestsLibrary">
+<msg time="2025-05-28T22:42:51.474567" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2025-05-28T22:42:51.478568" level="INFO">GET Request : url=http://127.0.0.1:8000/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-05-28T22:42:51.478568" level="INFO">GET Response : url=http://127.0.0.1:8000/ 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 28 May 2025 14:42:51 GMT', 'Server': 'WSGIServer/0.2 CPython/3.12.5', 'Content-Type': 'text/html; charset=utf-8', 'X-Frame-Options': 'DENY', 'Content-Length': '221', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    hello it is home
+&lt;/body&gt;
+&lt;/html&gt; 
+ </msg>
+<msg time="2025-05-28T22:42:51.478568" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>shopping_cart</arg>
+<arg>/</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<status status="PASS" start="2025-05-28T22:42:51.474567" elapsed="0.004001"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-05-28T22:42:51.478568" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-05-28T22:42:51.478568" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2025-05-28T22:42:51.473567" elapsed="0.006002"/>
+</test>
+<status status="PASS" start="2025-05-28T22:42:51.120121" elapsed="0.359448"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Sample" id="s1" pass="1" fail="0" skip="0">Test Sample</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-28T22:42:51.474567" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+</errors>
+</robot>
